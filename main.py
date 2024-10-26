@@ -39,6 +39,13 @@ def main():
             if obj.collision(player) == True:
                 print('Game over!')
                 exit()
+        
+        for obj in asteroids_group:
+            for bullet in shots_group:
+                if obj.collision(bullet) == True:
+                    bullet.kill()
+                    obj.kill()
+
 
         pygame.display.flip()
         dt = clock.tick(60)/1000
