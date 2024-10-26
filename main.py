@@ -40,11 +40,11 @@ def main():
                 print('Game over!')
                 exit()
         
-        for obj in asteroids_group:
+        for roid in asteroids_group:
             for bullet in shots_group:
-                if obj.collision(bullet) == True:
+                if roid.collision(bullet) == True:
                     bullet.kill()
-                    obj.kill()
+                    roid.split()
 
 
         pygame.display.flip()
